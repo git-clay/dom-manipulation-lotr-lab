@@ -7,6 +7,7 @@ var hobbits = [
   'Meriadoc \'Merry\' Brandybuck',
   'Peregrin \'Pippin\' Took'
 ];
+var frodo = hobbits[0];
 
 var buddies = [
   'Gandalf the Grey',
@@ -24,11 +25,27 @@ var body = document.querySelector('body');
 
 
 function makeMiddleEarth() {
-  // create a section tag with an id of middle-earth
-  // inside, add each land as an article tag
-  // inside each article tag include an h1 with the name of the land
-  // append middle-earth to your document body
+  // X create a section tag with an id of middle-earth
+  // x inside, add each land as an article tag
+  // x inside each article tag include an h1 with the name of the land
+  // x  append middle-earth to your document body
+  var midEarth = document.createElement("section");
+  midEarth.id = 'middle-earth';
+//  console.log(midEarth.id);
+
+  for (var i =0; i<lands.length;i++) {
+    var landArticle = document.createElement("article");
+    var landHeader = document.createElement("h1");
+
+    landHeader.append(lands[i]);
+    landArticle.append(landHeader);
+ //   console.log(landArticle);
+    midEarth.appendChild(landArticle);
+  }
+
+    body.appendChild(midEarth);
 }
+
 
 makeMiddleEarth();
 
@@ -36,20 +53,36 @@ makeMiddleEarth();
 // Part 2
 
 function makeHobbits() {
-  // display an unordered list of hobbits in the shire (which is the first article tag on the page)
   // give each hobbit a class of hobbit
+  var hobbitList = document.createElement('ul');
+  var theShire = document.querySelector("article");
+
+  for (var i =0; i< hobbits.length;i++) {
+  var hobbitItem = document.createElement('li');
+    hobbitItem.append(hobbits[i]);
+    hobbitItem.class = 'hobbit';
+    hobbitList.append(hobbitItem);
+  }
+  theShire.appendChild(hobbitList);
+  console.log(hobbitList);
 }
+
+makeHobbits();
 
 
 // Part 3
 
 function keepItSecretKeepItSafe() {
-  // create a div with an id of 'the-ring'
+  var ring = document.createElement("div");
+  ring.id = 'the-ring';
+  ring.class = 'magic-imbued-jewelry';
   // give the div a class of 'magic-imbued-jewelry'
   // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
+  var screech = ring.addEventListener("click",nazgulScreech);
   // add the ring as a child of Frodo
+  frodo.innerHTML(screech);
 }
-
+keepItSecretKeepItSafe();
 
 // Part 4
 
