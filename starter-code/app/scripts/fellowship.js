@@ -7,7 +7,6 @@ var hobbits = [
   'Meriadoc \'Merry\' Brandybuck',
   'Peregrin \'Pippin\' Took'
 ];
-var frodo = hobbits[0];
 
 var buddies = [
   'Gandalf the Grey',
@@ -69,18 +68,19 @@ function makeHobbits() {
 
 makeHobbits();
 
-
 // Part 3
 
 function keepItSecretKeepItSafe() {
   var ring = document.createElement("div");
-  ring.id = 'the-ring';
-  ring.class = 'magic-imbued-jewelry';
+  ring.setAttribute  ('id','the-ring');
+  ring.setAttribute  ('class','magic-imbued-jewelry');
   // give the div a class of 'magic-imbued-jewelry'
   // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
-  var screech = ring.addEventListener("click",nazgulScreech);
+  ring.addEventListener("click",nazgulScreech);
+  var frodo = document.querySelector('li');
+  frodo.appendChild(ring);
   // add the ring as a child of Frodo
-  frodo.innerHTML(screech);
+  
 }
 keepItSecretKeepItSafe();
 
