@@ -108,9 +108,9 @@ var theShire= [];
 for (var i = 0; i< 4;i++) {
   theShire[i]=allPeople[i];
 }
-console.log(theShire);
+//console.log(theShire);
 var rivendell = document.querySelectorAll('ul')[1];   //grabs rivendell's unordered list
-console.log(rivendell);
+//console.log(rivendell);
 for(i=0;i<theShire.length;i++){
   rivendell.append(theShire[i]);                      //itterates through theShire inhabitants and  appends them to rivendell
 }
@@ -122,16 +122,31 @@ function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
   // add each hobbit and buddy one at a time to 'the-fellowship'
   // after each character is added make an alert that they have joined your party
-}
+var fellowship=document.createElement('div');   
+fellowship.id = 'the-fellowship';                //gives div an id of 'the-fellowship' 
+var party = document.querySelectorAll('li');    //finds all characters as list items
+//console.log(party);
+//alert("Do you pledge your life to this fellowship?");
 
+for(var i=0;i<party.length;i++){
+  var listItem = party[i].innerHTML;            //stores current character as list item each loop (innerHTML displays text insead of {objects})
+  fellowship.append(party);
+ //alert(listItem+':'+"You have my sword/bow/axe");    //feedback-> 
+}
+}
+forgeTheFellowShip();
 
 // Part 8
 function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
   // apply style to the element
   // make the background 'white', add a grey border
-}
+nodeList = document.querySelectorAll('li');         //obtains all list items
+nodeList[0].textContent='Gandalf the White';        //changes to the White
+ console.log(nodeList);
 
+  }
+theBalrog();
 
 // Part 9
 function hornOfGondor() {
@@ -163,3 +178,4 @@ function thereAndBackAgain() {
   // remove all the baddies from the document
   // Move all the hobbits back to the shire
 }
+
