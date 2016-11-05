@@ -21,8 +21,6 @@ var body = document.querySelector('body');
 
 
 // Part 1
-
-
 function makeMiddleEarth() {
   // X create a section tag with an id of middle-earth
   // x inside, add each land as an article tag
@@ -30,7 +28,6 @@ function makeMiddleEarth() {
   // x  append middle-earth to your document body
   var midEarth = document.createElement("section");
   midEarth.id = 'middle-earth';
-//  console.log(midEarth.id);
 
   for (var i =0; i<lands.length;i++) {
     var landArticle = document.createElement("article");
@@ -38,24 +35,16 @@ function makeMiddleEarth() {
 
     landHeader.append(lands[i]);
     landArticle.append(landHeader);
- //   console.log(landArticle);
     midEarth.appendChild(landArticle);
   }
-
     body.appendChild(midEarth);
 }
-
-
 makeMiddleEarth();
-
-
 // Part 2
-
 function makeHobbits() {
   // give each hobbit a class of hobbit
   var hobbitList = document.createElement('ul');
   var theShire = document.querySelector("article");
-
   for (var i =0; i< hobbits.length;i++) {
   var hobbitItem = document.createElement('li');
     hobbitItem.append(hobbits[i]);
@@ -63,55 +52,56 @@ function makeHobbits() {
     hobbitList.append(hobbitItem);
   }
   theShire.appendChild(hobbitList);
-  console.log(hobbitList);
 }
-
 makeHobbits();
 
 // Part 3
-
 function keepItSecretKeepItSafe() {
   var ring = document.createElement("div");
-  ring.setAttribute  ('id','the-ring');
-  ring.setAttribute  ('class','magic-imbued-jewelry');
+  ring.id = 'the-ring';
+  ring.setAttribute ('class','magic-imbued-jewelry');
   // give the div a class of 'magic-imbued-jewelry'
   // add an event listener so that when a user clicks on the ring, the nazgulScreech function (provided) is invoked
   ring.addEventListener("click",nazgulScreech);
   var frodo = document.querySelector('li');
   frodo.appendChild(ring);
   // add the ring as a child of Frodo
-  
 }
 keepItSecretKeepItSafe();
 
 // Part 4
-
-
 function makeBuddies() {
-  // create an aside tag
   // attach an unordered list of the 'buddies' in the aside
   // insert your aside as a child element of rivendell
-}
+  var aside = document.createElement('aside');        
+  var buddyList = document.createElement('ul');      
+   nodeList = document.querySelectorAll("article");   //grabs array of articles (the shire,rivendell, and mordor)
+   var riven = nodeList[1];                           //grabs [1] rivendell from above array and puts into riven variable
 
+  for(var i=0;i<buddies.length; i++){
+    var buddyItem =document.createElement('li');    
+    buddyItem.append(buddies[i]);                     //inserts each "buddy" into buddyItem li during loop
+    buddyList.append(buddyItem);                      //inserts buddyItem into buddyList each loop
+    }
+  aside.append(buddyList);                            //inserts buddyList (ul) into aside
+  riven.appendChild(aside);                           //inserts aside w/ ul into revendale article
+
+}
+makeBuddies();
 
 // Part 5
-
-
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
 }
 
 
 // Part 6
-
 function leaveTheShire() {
   // assemble the hobbits and move them to Rivendell
 }
 
 
 // Part 7
-
-
 function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
   // add each hobbit and buddy one at a time to 'the-fellowship'
@@ -120,8 +110,6 @@ function forgeTheFellowShip() {
 
 
 // Part 8
-
-
 function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
   // apply style to the element
@@ -130,7 +118,6 @@ function theBalrog() {
 
 
 // Part 9
-
 function hornOfGondor() {
   // pop up an alert that the horn of gondor has been blown
   // Boromir's been killed by the Uruk-hai!
@@ -140,7 +127,6 @@ function hornOfGondor() {
 
 
 // Part 10
-
 function itsDangerousToGoAlone(){
   // take Frodo and Sam out of the fellowship and move them to Mordor
   // add a div with an id of 'mount-doom' to Mordor
@@ -148,7 +134,6 @@ function itsDangerousToGoAlone(){
 
 
 // Part 11
-
 function weWantsIt() {
   // Create a div with an id of 'gollum' and add it to Mordor
   // Remove the ring from Frodo and give it to Gollum
@@ -157,7 +142,6 @@ function weWantsIt() {
 
 
 // Part 12
-
 function thereAndBackAgain() {
   // remove Gollum and the Ring from the document
   // remove all the baddies from the document
