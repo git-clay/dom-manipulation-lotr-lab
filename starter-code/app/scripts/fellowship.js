@@ -85,15 +85,19 @@ function makeBuddies() {
     }
   aside.append(buddyList);                            //inserts buddyList (ul) into aside
   riven.appendChild(aside);                           //inserts aside w/ ul into revendale article
-
 }
 makeBuddies();
 
 // Part 5
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
-}
+  var arag = document.createTextNode('Aragorn');      //creates Aragorn as arag in text form within the document
 
+  nodeList = document.querySelectorAll('li');         //obtains all list items
+  nodeList[7].textContent='Aragorn';                  //changes #7 to Aragorn
+  }
+
+beautifulStranger();
 
 // Part 6
 function leaveTheShire() {
