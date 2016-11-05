@@ -143,7 +143,7 @@ function theBalrog() {
   // make the background 'white', add a grey border
 nodeList = document.querySelectorAll('li');         //obtains all list items
 nodeList[0].textContent='Gandalf the White';        //changes to the White
- console.log(nodeList);
+ //console.log(nodeList);
 
   }
 theBalrog();
@@ -154,9 +154,16 @@ function hornOfGondor() {
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
   // Remove Boromir from the Fellowship
+  alert('Da DOOOOM --- The horn of Gondor trumpets');
+  nodeList = document.querySelectorAll('li');         //obtains all list items
+  var boromir = nodeList[4].textContent;        //stores boromin's location
+  var strike = boromir.strike();                //stores boromir with a strike function
+    console.log(strike);                        //shows <strike>Boromir</strike>
+  nodeList[4].innerHTML=strike;        //replaces Boromir with the strikethrough version
+//console.log(nodeList);
 }
 
-
+hornOfGondor();
 // Part 10
 function itsDangerousToGoAlone(){
   // take Frodo and Sam out of the fellowship and move them to Mordor
