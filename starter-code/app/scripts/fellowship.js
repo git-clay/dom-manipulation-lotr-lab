@@ -77,7 +77,7 @@ function makeBuddies() {
   var buddyList = document.createElement('ul');      
    nodeList = document.querySelectorAll("article");   //grabs array of articles (the shire,rivendell, and mordor)
    var riven = nodeList[1];                           //grabs [1] rivendell from above array and puts into riven variable
-
+//console.log(aside);
   for(var i=0;i<buddies.length; i++){
     var buddyItem =document.createElement('li');    
     buddyItem.append(buddies[i]);                     //inserts each "buddy" into buddyItem li during loop
@@ -91,19 +91,31 @@ makeBuddies();
 // Part 5
 function beautifulStranger() {
   // change the 'Strider' textnode to 'Aragorn'
-  var arag = document.createTextNode('Aragorn');      //creates Aragorn as arag in text form within the document
-
+//  var arag = document.createTextNode('Aragorn');      //creates Aragorn as arag in text form within the document
   nodeList = document.querySelectorAll('li');         //obtains all list items
+ // console.log(nodeList);
   nodeList[7].textContent='Aragorn';                  //changes #7 to Aragorn
   }
-
 beautifulStranger();
 
 // Part 6
 function leaveTheShire() {
-  // assemble the hobbits and move them to Rivendell
+  //make a hobbit group 
+  //append hobbits to Rivendell(an aside)
+// var theShire = document.querySelectorAll('ul')[0]; //finds all inhabiting the shire as an unordered list
+var allPeople = document.querySelectorAll('li');
+var theShire= [];
+for (var i = 0; i< 4;i++) {
+  theShire[i]=allPeople[i];
 }
-
+console.log(theShire);
+var rivendell = document.querySelectorAll('ul')[1];   //grabs rivendell's unordered list
+console.log(rivendell);
+for(i=0;i<theShire.length;i++){
+  rivendell.append(theShire[i]);                      //itterates through theShire inhabitants and  appends them to rivendell
+}
+}
+leaveTheShire();
 
 // Part 7
 function forgeTheFellowShip() {
